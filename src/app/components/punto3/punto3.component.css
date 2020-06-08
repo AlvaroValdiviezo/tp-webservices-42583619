@@ -1,0 +1,21 @@
+#tar{
+    border: none;
+}
+#tar:hover{
+    transform: translate(-3px) scale(1.05);
+}
+#ti{
+    border-radius: 5px;
+    color: white;
+    font: 24px Calibri bold;
+    background: -webkit-gradient(linear, left top, left bottom, from(rgb(206, 14, 30)), to(darkslategrey));
+}
+#caja div a{
+    text-decoration: none;
+    color: black;
+}
+.titulocard{
+    color: white;
+    font: 24px Calibri bold;
+    background: -webkit-gradient(linear, left top, left bottom, from(rgb(206, 14, 30)), to(darkslategrey));
+  }

@@ -1,0 +1,19 @@
+.conversor{
+    background: -webkit-gradient(linear, left top, left bottom, from(rgb(34, 78, 221)), to(darkslategrey));
+    color: white
+  }
+  
+.exchange{
+    font-size: 14px;
+    width: 100%
+  }
+#tabcot thead tr{
+    background:-webkit-gradient(linear, left top, left bottom, from(rgb(197, 197, 202)), to(darkslategrey));
+  }
+  
+.bordes{
+    border-bottom: solid 1px;
+  }
+.convers{
+      background:-webkit-gradient(linear, left top, left bottom, from(rgb(197, 197, 202)), to(darkslategrey));
+  }

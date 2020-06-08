@@ -1,0 +1,145 @@
+<div class="row">
+        <section class="col-md-8 d-md-block d-sm-none d-none">
+            <div class="card">
+            <div class="card-header text-center conversor">
+                <h5 class="card-title">Conversor de Divisas</h5>
+            </div>
+            <div class="card-body">                
+                <table class="exchange" cellpadding="3" id="tabcot" >                    
+                    <thead>                    
+                    <tr class="bg-primary bordes ">
+                        <th></th>
+                        <th>Peso Arg</th>
+                        <th>Dolar US</th>
+                        <th>Euro</th>
+                        <th>Yen</th>
+                        <th>Real</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr class="bordes">
+                        <td rowspan="2">Peso Ar</td>                        
+                        <td>1.000000</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>                        
+                    </tr>
+                    <tr class="bordes">
+                        <td> 1.000000</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>                        
+                    </tr>
+                    <tr class="bordes">
+                        <td rowspan="2">Dolar US</td>
+                        <td></td>
+                        <td>1.000000</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="bordes">
+                        <td></td>
+                        <td>1.000000</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>                        
+                    </tr>
+                    <tr class="bordes">
+                        <td rowspan="2">Euro</td>
+                        <td></td>
+                        <td></td>
+                        <td>1.000000</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="bordes">
+                        <td></td>
+                        <td></td>
+                        <td>1.000000</td>
+                        <td></td>
+                        <td></td>                        
+                    </tr>
+                    <tr class="bordes">
+                        <td rowspan="2">Yen</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>1.000000</td>
+                        <td></td>
+                    </tr>
+                    <tr class="bordes">
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>1.000000</td>
+                        <td></td>                        
+                    </tr>
+                    <tr class="bordes">
+                        <td rowspan="2">Real</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>1.000000</td>
+                    </tr>
+                    <tr class="bordes">
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>1.000000</td>
+                    </tr>
+                    </tbody>
+                </table>            
+            </div>
+            </div>
+        </section>
+        <aside class="col-md-4 col-sm-12 col-12">
+            <div class="card">
+                <div class="card-header text-center conversor">
+                    Conversor de divisas
+                </div>
+                <div class="card-body convers">
+                    <form>
+                        <div class="form-group">
+                            <label for="txtcantidad">Cantidad</label>
+                            <input type="number" class="form-control form-control-sm" id="txtcantidad" aria-describedby="emailHelp" name="12" [(ngModel)]="divisas.from_value">                            
+                        </div>
+                        <div class="form-group">
+                            <label for="txtDe">De</label>
+                            <select class="form-control form-control-sm" name="de" [(ngModel)]="divisas.from_type">
+                                <option value="ARS">Peso Argentino</option>
+                                <option value="USD">Dolar US</option>
+                                <option value="AUD">Dolar Australiano</option>
+                                <option value="EUR">Euro</option>
+                                <option value="MXN">Peso Mexicano</option>
+                                <option value="CAD">Dolar Canadiense</option>
+                                <option value="BRL">Real</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="txtA">A</label>
+                            <select class="form-control form-control-sm" name="a" [(ngModel)]="divisas.to_type">
+                                <option value="ARS">Peso Argentino</option>
+                                <option value="USD">Dolar US</option>
+                                <option value="BRL">Real</option>
+                                <option value="EUR">Euro</option>
+                                <option value="MXN">Peso Mexicano</option>
+                                <option value="CAD">Dolar Canadiense</option>
+                                <option value="AUD">Dolar Australiano</option>
+                            </select>
+                        </div>
+                        <div class="form-group">                            
+                            <input type="number" class="form-control" readonly id="txtA" placeholder="{{divisas.result}}" >
+                        </div>
+                        <button type="button" class=" col-sm-12 btn btn-warning btn-sm" (click)="cargarDivisas()">Convertir</button>
+                    </form>
+                </div>
+            </div>
+        </aside>
+</div>
+
+

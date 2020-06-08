@@ -1,0 +1,11 @@
+nav{
+    border-top: solid 2px black;
+    border-bottom: solid 2px black;
+}
+nav li a{
+    border-radius: 5px ;
+}
+nav li a:hover{
+    background-color: rgb(170, 169, 169) ;
+    color: black;
+}

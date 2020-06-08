@@ -1,0 +1,35 @@
+<div class="row" id="nt">
+    <form class="col-10">
+        <div class="form-group row ">
+            <select name="categoria" id="categoria" class="form-control col-10" aria-placeholder="Categoria" [(ngModel)]="categoria">
+            <option value="soccer">Futbol</option>
+            <option value="cricket">Cricket</option>
+            <option value="basketball">Basquet</option>
+            <option value="tennis">Tenis</option>
+            <option value="hockey">Hockey</option>
+            </select>
+            <button type="button" class="btn btn-outline-success col-2" (click)="cargarNoticias()">Buscar</button>
+        </div>
+        
+    </form>
+    
+    <content class="col-md-9" >
+      <h1 class="col-md-12 d-md-block d-none text-center">Ultimas Noticias</h1>
+      <br>
+        <div class="row row-cols-1 row-cols-md-2  " >
+            <div class="col mb-3 col-6" id="box1"  *ngFor="let item of listaNot" >
+              <div class="card h-100">
+                <img src="{{item.img}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                 <h5 class="badge badge-danger ">{{categoria}}</h5>
+                 <h1 class="card-title" >{{item.tit}}</h1>
+                </div>
+              </div>
+            </div>
+          </div>      
+    </content>
+   <aside class="col-md-3 justify-content-center d-none d-md-block">
+     <img src="../../../assets/image/canal4.gif" alt="...">
+    </aside> 
+
+</div>

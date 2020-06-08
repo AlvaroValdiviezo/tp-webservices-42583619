@@ -1,0 +1,94 @@
+<div class="card">
+    <div class="card-header text-center" id="titco">
+        Estadísticas de COVID19
+    </div>
+    <div class="card-body">
+        <form>
+            <div class="row">
+                <div class="col-md-6 offset-md-3">
+            <div class="col-md-12">                        
+                <div class="form-group row">
+                    <label for="txtDe" class="col-md-2">País</label>
+                    <select class="form-control form-control-sm col-md-10" name="ps" [(ngModel)]="pais">
+                        <option value="argentina">Argentina</option>
+                        <option value="Bolivia">Bolivia</option>
+                        <option value="Brazil">Brasil</option>
+                        <option value="Chile">Chile</option>
+                        <option value="Colombia">Colombia</option>
+                        <option value="Ecuador">Ecuador</option>
+                        <option value="Paraguay">Paraguay</option>
+                        <option value="Peru">Peru</option>
+                        <option value="Uruguay">Uruguay</option>
+                        <option value="Venezuela">Venezuela</option>
+                        <option value="Spain">España</option>
+                        <option value="Usa">Estados Unidos</option>
+                        <option value="Russia">Rusia</option>
+                        <option value="Italy">Italia</option>
+                        <option value="World">Mundo</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group ">
+                    <label class="form-label" for="exampleCheck1" >Casos confirmados:</label> 
+                    <input type="text" class="form-control" readonly id="exampleCheck1" placeholder="{{covid.confirmed}}">                           
+                </div>
+                <div class="form-group ">
+                    <label class="form-label" for="exampleCheck1">Curados:</label>
+                    <input type="text" class="form-control" readonly id="exampleCheck1" placeholder="{{covid.recovered}}">                           
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="exampleCheck1">Fallecidos:</label>
+                    <input type="text" class="form-control" readonly id="exampleCheck1" placeholder="{{covid.deaths}}">                           
+                </div>
+            </div>                        
+            <button type="submit" class=" col-sm-12 btn btn-primary btn-sm" (click)="buscarPais()">Consultar</button>
+            </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<br>
+
+<div class="table-responsive">
+    
+    <h4>Listado de países afectados</h4>
+    <table class="table table-striped" [mfData]="resultados" #mf="mfDataTable" [mfRowsOnPage]="5">
+        <thead>
+        <tr>
+          <th style="width: 30%">
+          <mfDefaultSorter by="de">Ubicacion</mfDefaultSorter>
+        </th>
+        <th style="width: 15%">
+          <mfDefaultSorter by="para">Casos confirmados</mfDefaultSorter>
+        </th>
+        <th style="width: 20%">
+          <mfDefaultSorter by="texto">Casos Totales</mfDefaultSorter>
+        </th>
+        <th style="width: 20%">
+          <mfDefaultSorter by="fecha">Curados</mfDefaultSorter>
+        </th>
+        <th style="width: 15%">
+            <mfDefaultSorter by="fecha">Fallecidos</mfDefaultSorter>
+        </th>
+        </tr>
+        </thead>
+        <tbody>
+         <tr *ngFor="let item of mf.data">
+          <td>{{item['Country_text']}}</td>
+          <td>{{item['New Cases_text']}}</td>
+          <td >{{item['Total Cases_text']}}</td>
+          <td >{{item['Total Recovered_text']}}</td>
+          <td>{{item['Total Deaths_text']}}</td>
+         </tr>
+        </tbody>
+        <tfoot>
+         <tr>
+          <td colspan="4">
+           <mfBootstrapPaginator [rowsOnPageSet]="[5,10,25]"></mfBootstrapPaginator>
+          </td>
+         </tr>
+        </tfoot>
+    </table>
+</div>
